@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">My Blog</h1>
+            <div class="header-actions">
+                <input type="text" id="search-bar" class="search-bar" placeholder="Search..." oninput="searchBlogs()">
+                <button id="mode-toggle" class="btn">🌙 Dark Mode</button>
+                <button id="add-post-btn" class="btn" onclick="addPostForm()">+ Add Post</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Creation Form -->
+    <div id="post-form-container" class="hidden">
+        <div class="container">
+            <h2>Create a New Blog Post</h2>
+            <form id="post-form" onsubmit="createPost(event)">
+                <input type="text" id="post-title" placeholder="Post Title" required>
+                <textarea id="post-content" placeholder="Write your blog content..." required></textarea>
+                <input type="url" id="post-image" placeholder="Image URL (Optional)">
+                <div class="form-actions">
+                    <button type="submit" class="btn">Save Post</button>
+                    <button type="button" class="btn" onclick="closePostForm()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Display Blog Posts -->
+    <div id="blog-list" class="container">
+        <!-- Placeholder posts for demo -->
+        <div class="post">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <h3>Sample Blog Post 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+        <div class="post">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <h3>Sample Blog Post 2</h3>
+            <p>Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+        <div class="post">
+            <img src="https://via.placeholder.com/800x400" alt="Blog Image">
+            <h3>Sample Blog Post 3</h3>
+            <p>Maecenas malesuada. Praesent congue erat at massa. Sed cursus turpis vitae tortor. Duis auctor, magna ut faucibus.</p>
+            <button>Edit</button>
+            <button>Delete</button>
+        </div>
+    </div>
+
+    <script src="javascript.js"></script>
+</body>
+</html>
